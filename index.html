@@ -2,48 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>İki Dil Arası Sesli İletişim</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İki Kullanıcı Sesli Çeviri</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>İki Kullanıcı Arası Çeviri</h1>
-    
-    <div class="settings">
-      <div>
-        <label>1. Kullanıcı Dili:</label>
-        <select id="user1Language">
-          <option value="en">İngilizce</option>
-          <option value="tr">Türkçe</option>
-          <option value="es">İspanyolca</option>
-          <option value="fr">Fransızca</option>
-        </select>
-      </div>
-      <div>
-        <label>2. Kullanıcı Dili:</label>
-        <select id="user2Language">
-          <option value="en">İngilizce</option>
-          <option value="tr">Türkçe</option>
-          <option value="es">İspanyolca</option>
-          <option value="fr">Fransızca</option>
-        </select>
-      </div>
-    </div>
 
-    <div class="controls">
-      <button id="startRecord">Kaydı Başlat</button>
-      <button id="stopRecord" disabled>Kaydı Durdur</button>
-    </div>
+  <h1>İki Kullanıcı Sesli Çeviri</h1>
 
-    <div class="output">
-      <h3>Konuşma:</h3>
-      <p id="originalText"></p>
-      <h3>Çeviri:</h3>
-      <p id="translatedText"></p>
+  <div class="settings">
+    <div>
+      <label>1. Kullanıcının Dili:</label>
+      <select id="user1Language">
+        <option value="tr">Türkçe</option>
+        <option value="en">İngilizce</option>
+        <option value="de">Almanca</option>
+        <option value="fr">Fransızca</option>
+        <option value="es">İspanyolca</option>
+      </select>
     </div>
+    <div>
+      <label>2. Kullanıcının Dili:</label>
+      <select id="user2Language">
+        <option value="en">İngilizce</option>
+        <option value="tr">Türkçe</option>
+        <option value="de">Almanca</option>
+        <option value="fr">Fransızca</option>
+        <option value="es">İspanyolca</option>
+      </select>
+    </div>
+  </div>
 
+  <div class="controls">
+    <button id="startBtn">Kaydı Başlat</button>
+    <button id="stopBtn" disabled>Kaydı Durdur</button>
+  </div>
+
+  <div class="output">
+    <h2>Sonuç</h2>
+    <p id="originalText"></p>
+    <p id="translatedText"></p>
   </div>
 
   <script src="script.js"></script>
+
 </body>
 </html>

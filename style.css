@@ -1,35 +1,30 @@
 body {
     font-family: Arial, sans-serif;
-    background: #f0f0f0;
-    padding: 20px;
+    text-align: center;
+    margin: 30px;
   }
   
-  .container {
-    max-width: 700px;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  }
-  
-  .settings, .controls {
+  .settings {
     margin-bottom: 20px;
   }
   
-  .settings select {
-    margin-left: 10px;
+  .controls {
+    margin-bottom: 20px;
   }
   
   button {
     padding: 10px 20px;
-    margin-right: 10px;
+    margin: 5px;
+    font-size: 16px;
     cursor: pointer;
   }
   
-  .output p {
-    background: #eaeaea;
-    padding: 10px;
-    border-radius: 5px;
+  .output {
+    margin-top: 30px;
+  }
+  
+  #originalText, #translatedText {
+    margin: 10px 0;
+    font-size: 18px;
   }
   
