@@ -102,29 +102,23 @@ async function transcribeAudio(audioUrl) {
 }
 
 async function translateText(text) {
-    const sourceLang = isUser1Turn ? user1LanguageSelect.value : user2LanguageSelect.value;
-    const targetLang = isUser1Turn ? user2LanguageSelect.value : user1LanguageSelect.value;
-  
-    // Proxy URL ekliyoruz
-    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-    const deepLUrl = 'https://api-free.deepl.com/v2/translate';
-  
-    try {
-      const response = await fetch(proxyUrl + deepLUrl, {
-        method: 'POST',
-        headers: {
-          'Authorization': `DeepL-Auth-Key ${deepLApiKey}`,
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: `text=${encodeURIComponent(text)}&source_lang=${sourceLang.toUpperCase()}&target_lang=${targetLang.toUpperCase()}`
-      });
-  
-      const data = await response.json();
-      return data.translations[0].text;
-  
-    } catch (error) {
-      console.error("Çeviri hatası:", error);
-      return "Çeviri yapılamadı.";
-    }
+  const sourceLang = isUser1Turn ? user1LanguageSelect.value : user2LanguageSelect.value;
+  const targetLang = isUser1Turn ? user2LanguageSelect.value : user1LanguageSelect.value;
+
+  try {
+    const response = await fetch('http://localhost:5000/translate', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `text=${encodeURIComponent(text)}&sourceLang=${sourceLang}&targetLang=${targetLang}`
+    });
+
+    const data = await response.json();
+    return data.translatedText;
+
+  } catch (error) {
+    console.error("Çeviri hatası:", error);
+    return "Çeviri yapılamadı.";
   }
-  
+}
