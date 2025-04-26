@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  }
+  
+  .settings, .controls {
+    margin-bottom: 20px;
+  }
+  
+  .settings select {
+    margin-left: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .output p {
+    background: #eaeaea;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
